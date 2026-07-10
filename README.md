@@ -2,7 +2,7 @@
 
 Um painel de controle financeiro completo e responsivo projetado para auxiliar no gerenciamento de receitas e despesas diárias. O projeto calcula saldos automaticamente e mantém o histórico seguro mesmo se o usuário fechar o navegador.
 
-> **🔗 Acesse o projeto online:** 
+> **🔗 Acesse o projeto online:** https://kathleencris.github.io/Gerenciador-Financeiro/
 
 ---
 
