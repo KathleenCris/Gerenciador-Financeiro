@@ -1,0 +1,197 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; /* Um cinza esverdeado bem suave e moderno */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo para dar espaço ao histórico crescer */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+.financas-container {
+    background-color: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+/* HEADER E SALDO */
+.financas-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.financas-header h1 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.saldo-box {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradiente escuro chique */
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.saldo-box small {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.saldo-box h2 {
+    font-size: 2.2rem;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* CARDS DE RESUMO (ENTRADAS E SAÍDAS) */
+.resumo-cards {
+    display: flex;
+    gap: 15px; /* Espaço entre os dois cards */
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1; /* Faz os dois cards dividirem o espaço do meio exatamente por igual */
+    background-color: #fff;
+    border: 1px solid #eef2f5;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.card h3 {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Cores específicas para os valores dos cards */
+.card.entrada p { color: #2ecc71; }
+.card.saida p { color: #e74c3c; }
+
+/* SEÇÕES DE FORMULÁRIO E HISTÓRICO */
+.formulario-secao, .historico-secao {
+    margin-bottom: 30px;
+}
+
+.formulario-secao h3, .historico-secao h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db; /* Barrinha azul estilosa do lado do título */
+    padding-left: 8px;
+}
+
+/* FORMULÁRIO E INPUTS */
+#transacao-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-grupo input, .input-grupo select {
+    padding: 12px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Efeito de foco quando o usuário clica para digitar */
+.input-grupo input:focus, .input-grupo select:focus {
+    border-color: #3498db;
+}
+
+/* BOTÃO DE ADICIONAR */
+#adicionar-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 5px;
+}
+
+#adicionar-btn:hover {
+    background-color: #2980b9;
+}
+
+/* LISTA DE HISTÓRICO (TRANSAÇÕES) */
+.transacoes-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 250px; /* Se tiver muitos itens, cria uma barra de rolagem interna */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* CADA ITEM DA LISTA (LI) */
+.transacoes-lista li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; /* Texto na esquerda, valor e botão na direita */
+    align-items: center;
+    border-left: 5px solid #ccc; /* Cor padrão cinza */
+}
+
+/* Bordas coloridas dinâmicas para as transações da lista */
+.transacoes-lista li.entrada { border-left-color: #2ecc71; }
+.transacoes-lista li.saida { border-left-color: #e74c3c; }
+
+/* Botão de excluir (X) de cada transação */
+.deletar-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 15px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.transacoes-lista li:hover .deletar-btn {
+    opacity: 1; /* O botão de excluir só fica aceso quando passa o mouse por cima do item */
+}

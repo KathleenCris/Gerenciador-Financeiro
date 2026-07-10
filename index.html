@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Finanças Pro 💰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="financas-container">
+        <!-- PALCO DO SALDO GERAL -->
+        <header class="financas-header">
+            <h1>Finanças Pessoais 📊</h1>
+            <div class="saldo-box">
+                <small>Saldo Atual</small>
+                <h2 id="saldo-total">R$ 0,00</h2>
+            </div>
+        </header>
+
+        <!-- CARDS DE ENTRADAS E SAÍDAS (LADO A LADO) -->
+        <section class="resumo-cards">
+            <div class="card entrada">
+                <h3>🟢 Entradas</h3>
+                <p id="total-entradas">R$ 0,00</p>
+            </div>
+            <div class="card saida">
+                <h3>🔴 Saídas</h3>
+                <p id="total-saidas">R$ 0,00</p>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO PARA ADICIONAR NOVA TRANSAÇÃO -->
+        <section class="formulario-secao">
+            <h3>Nova Transação</h3>
+            <form id="transacao-form">
+                <div class="input-grupo">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Ex: Salário, Hambúrguer, Luz..." required>
+                </div>
+                
+                <div class="input-grupo">
+                    <label for="valor">Valor (R$)</label>
+                    <input type="number" step="0.01" id="valor" placeholder="0,00" required>
+                </div>
+
+                <div class="input-grupo">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" required>
+                        <option value="entrada">🟢 Entrada (Ganho)</option>
+                        <option value="saida">🔴 Saída (Gasto)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="adicionar-btn">Adicionar Transação</button>
+            </form>
+        </section>
+
+        <!-- HISTÓRICO DE MOVIMENTAÇÕES -->
+        <section class="historico-secao">
+            <h3>Histórico de Transações</h3>
+            <ul id="lista-transacoes" class="transacoes-lista">
+                <!-- As transações que o usuário digitar vão aparecer aqui dentro via JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
